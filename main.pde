@@ -1,2 +1,15 @@
-main
-//src
+
+
+void setup(){
+size(1000,800);
+
+}
+
+void draw(){
+background(0);
+
+
+
+}
+
+
