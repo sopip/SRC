@@ -1,75 +1,9 @@
-//knapper
-import processing.core.*;
-class Knap{
-  int x, y, w, h;
-  String titel;
-  
-  Knap(int xin, int yin, int win, int hin, String titelin){ // in for input så det ikke bliver forvirrende med ens navne
-    x = xin;
-    y = yin;
-    w = win;
-    h = hin;
-    titel = titelin;
-  }
-  
-  // funktionalitet
-  boolean knapKlik(int xin, int yin) {
-    boolean hitY = xin > x && xin < x + w;
-    boolean hitX = yin > y && yin < y + h;    
-    return hitX && hitY;
-  }
-  
-  void tegnKnap() {
-    fill(255);
-    rect(x,y,w,h);
-    textSize(20);
-    fill(0);
-    text(titel,x+10,y+h/2);
-  } 
-}
+//ouafhsd
 
-class Volumen {
-  int x, y, b, h;
-
-
-  Volumen(int xin, int yin, int bin, int hin){
-    x = xin;
-    y = yin;
-    b = bin;
-    h = hin;
-  }
-  
-  void tegnVolumen(){
-    rect(x,y,b,h);
-  }
-  
-  void ændrVol(int v){
-    b = b + v;
-  }
-  // funktionalitet
-  void resetknap(){
-  b=100;
-  }
-}
-
-
-
-
-/*
-public class button(){
-  private int a;
-  private int b;
-  private int c;
-  private int d;
-  private int e;
-  private int f;
-  
-  public button(PApplet p, int ){
-
-
-  }
-*/
-
-
-
-
+/* Put public foran klasser og funktioner
+ * Private foran variable f.eks. (at tænde motoren er public men hvordan motoren virker behøver man ikke at vide)
+ * p. foran println, rect, fill, rectMode, CENTER, mouseX
+ * import processing.core.*; i toppen
+ * private PApplet p; I variablene. Jeg tror det er den der gør at man kan sige p. (Det fikser problem med at den ikke kan finde 'opo')
+ * I konstrukteren skal den første tingting være PAppletpin, og så nedenunder står der p = pin og der hvor man laver objektet skal der først stå this.
+ */
