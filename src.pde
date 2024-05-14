@@ -34,10 +34,9 @@ for (int i = 0; i<6; i++){
 v[i] = list[i].vari();
 println(i,"  ",v[i]);
  }
- 
 
- for(int x=0;x<300;x++){
-  for(int y=0;y<300;y++){
+ for(int x=0;x<200;x++){
+  for(int y=0;y<200;y++){
     if(implicit(float(x),float(y))>0){
       fill(0,0,255);
       circle(x,y,2);
