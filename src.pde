@@ -19,8 +19,9 @@ float implicit(float x, float y){
   float xx = x-50;
   float yy = y-50;
 //  return circ(x, y, 100,200,50)*circ(x, y, 200,200,30)*circ(x, y, 50,100,50)-list[0].vari()*x*y;
-//  return circ(x, y, 100,200,50)*circ(x, y, 200,200,30)-list[0].vari()*x*y;
-  return pow(abs(xx),1.8+list[1].vari())+pow(yy-pow(abs(xx),0.6+list[0].vari()),2)-1000;
+  return circ(xx, yy, 100,20,30)*circ(xx, yy, 200,200,30)-1000*list[0].vari()*xx*yy;
+//Sikkerhedskopi af peanut return circ(xx, yy, 100,20,30)*circ(xx, yy, 200,200,30)-10000*list[0].vari()*xx*yy;
+ // return pow(abs(xx),1.8+list[1].vari())+pow(yy-pow(abs(xx),0.6+list[0].vari()),2)-1000;
 }
 
 void draw(){
@@ -35,8 +36,8 @@ v[i] = list[i].vari();
 println(i,"  ",v[i]);
  }
 
- for(int x=0;x<200;x++){
-  for(int y=0;y<200;y++){
+ for(int x=0;x<400;x++){
+  for(int y=0;y<400;y++){
     if(implicit(float(x),float(y))>0){
       fill(0,0,255);
       circle(x,y,2);
