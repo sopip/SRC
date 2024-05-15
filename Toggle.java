@@ -7,20 +7,23 @@ public class Toggle extends GUIbase{
     super(pin, xin, yin, win, hin);
   }
   public void draw() {
-    p.fill(255);
+    p.fill(245,174,240);
+    //her kunne jeg p.rectMode(p.CORNER) for det ville blive fint men det stemmer ikke med isOver :(
     p.rect(posx, posy, width, height);
-    p.fill(255,0,0);
+    p.fill(0);
     if(toggled){
-      p.rect(posx,posy,width/2,height);
+      p.rect(posx,posy-height/4,width,height/2);
     }else{
-      p.rect(posx+width/2,posy,width/2,height);
+      p.rect(posx,posy+height/4,width,height/2);
     }
   }
 
   @Override
   public void pressed() {
+    if(isOver()){
     toggled = !toggled;
     super.pressed();
+    }
   }
 
   public void toggleChange(){

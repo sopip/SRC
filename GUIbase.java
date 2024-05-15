@@ -23,21 +23,19 @@ public class GUIbase {
   }
 
   public void pressed() {
-      if (isOver()) {
-        locked = true;
-        xoff = p.mouseX-posx;
-      }
+    if (isOver()) {
+      locked = true;
+      xoff = p.mouseX-posx;
     }
-
-    public void dragged() {
-      if (locked) {
-        posx = p.mouseX-xoff;
-      }
-    }
-
-    public void released() {
-      locked = false;
-    }
-
-  //her var vari og textdraw
   }
+
+  public void dragged() {
+    if (locked) {
+      posx = p.mouseX-xoff;
+    }
+  }
+
+  public void released() {
+    locked = false;
+  }
+ }
