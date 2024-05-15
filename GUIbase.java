@@ -3,21 +3,18 @@ public class GUIbase {
     protected float width, height; //protected fordi de også bruges i underklasser
     protected float posx, posy;
     private float xoff;
-    private boolean locked = false;
+    private boolean locked;
     protected PApplet p;
   
     public GUIbase(PApplet pin, int xin, int yin, int win, int hin) {
       p = pin;
       posx = xin;
       posy = yin;
-      width = win; //skal være 30
-      height = hin; //skal være 20
-
-      
+      width = win;
+      height = hin;
     }
   public void draw() {
   }
-//her var sliderdraw
   public boolean isOver(){ //skal der så stå boolean i stedet for void?
     return ((p.mouseX<posx+width/2) && (p.mouseX>posx-width/2) && (p.mouseY<posy+height/2) && (p.mouseY>posy-height/2));
   }
