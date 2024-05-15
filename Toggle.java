@@ -2,7 +2,7 @@
 import processing.core.*;
 
 public class Toggle extends GUIbase{
-  private boolean toggled = false;
+  public boolean toggled = false;
   public Toggle(PApplet pin, int xin, int yin, int win, int hin) {
     super(pin, xin, yin, win, hin);
   }
@@ -21,9 +21,6 @@ public class Toggle extends GUIbase{
   public void pressed() {
     toggled = !toggled;
     super.pressed();
-  }
-    public boolean toggled(){
-return true;
   }
 
   public void toggleChange(){
