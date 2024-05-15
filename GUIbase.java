@@ -1,25 +1,27 @@
 import processing.core.*;
 public class GUIbase {
-    private float width, height;
-    private float posx, posy, xoff;
-    private boolean over = false;
+    protected float width, height; //protected fordi de også bruges i underklasser
+    protected float posx, posy;
+    private float xoff;
     private boolean locked = false;
-    private PApplet p;
-
+    protected PApplet p;
   
-    public GUIbase(PApplet pin, int win, int hin, int xin, int yin) {
+    public GUIbase(PApplet pin, int xin, int yin, int win, int hin) {
       p = pin;
-      width = win; //skal være 30
-      height = hin; //skal være 20
       posx = xin;
       posy = yin;
+      width = win; //skal være 30
+      height = hin; //skal være 20
+
       
     }
   
 //her var sliderdraw
-
+  public boolean isOver(){ //skal der så stå boolean i stedet for void?
+    return ((p.mouseX<posx+width/2) && (p.mouseX>posx-width/2) && (p.mouseY<posy+height/2) && (p.mouseY>posy-height/2));
+}
     public void pressed() {
-      if (over) {
+      if (isOver()) {
         locked = true;
         xoff = p.mouseX-posx;
       }
@@ -33,13 +35,5 @@ public class GUIbase {
       locked = false;
     }
 
-    public float vari(){
-      float t=(posx-linePos)/linelength;
-      return t*(value1-value0)+value0;
-    }
-    public void textDraw(){
-        p.stroke(255);
-        p.textSize(20);
-        p.text((vari()),linePos+linelength+20,posy+5);
-    }
+  //her var vari og textdraw
   }

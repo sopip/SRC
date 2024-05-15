@@ -1,12 +1,40 @@
 //Her skal være knapper
-/*
- public class Knap{
- knap(samme som i super tror jeg){
-  
- }
- Skal kunne skifte imellem hjerte og peanut
- }
- */
+import processing.core.*;
+
+public class Toggle extends GUIbase{
+  private boolean toggled = false;
+  public Toggle(PApplet pin, int xin, int yin, int win, int hin) {
+    super(pin, xin, yin, win, hin);
+  }
+  public void draw() {
+    p.fill(255);
+    p.rect(posx, posy, width, height);
+    p.fill(255,0,0);
+    if(toggled){
+      p.rect(posx,posy,width/2,height);
+    }else{
+      p.rect(posx+width/2,posy,width/2,height);
+    }
+  }
+
+  @Override
+  public void pressed() {
+    toggled = !toggled;
+    super.pressed();
+  }
+    public boolean toggled(){
+return true;
+  }
+
+  public void toggleChange(){
+    if(toggled){
+//Skal kunne skifte imellem hjerte og peanut
+    }
+  }
+}
+
+
+
 
 /* Put public foran klasser og funktioner
  * Private foran variable f.eks. (at tænde motoren er public men hvordan motoren virker behøver man ikke at vide)
