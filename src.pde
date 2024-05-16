@@ -17,12 +17,13 @@ float circ(float x, float y, float cx, float cy, float r ) {
 float heart(float x, float y){
   Slider sl0;
   Slider sl1;
-  float xx = x-100;
-  float yy = y-100;
+  float xx = (x-100)/50; //så hjertet skubbes til 0,0 og kan regnes på
+  float yy = (y-100)/50;
   sl0 = (Slider) (list[0]);
   sl1 = (Slider) (list[1]);
 // kan ikke huske hvad det her er return circ(x, y, 100,200,50)*circ(x, y, 200,200,30)*circ(x, y, 50,100,50)-list[0].vari()*x*y;
   return pow(abs(xx),1.8+sl0.vari())+pow(yy-pow(abs(xx),0.6+sl1.vari()),2)-1000;
+  // return pow(abs(xx),2)+pow(yy-pow(abs(xx),0.666),2)-1;
 }
 
 float peanut(float x, float y){
@@ -30,7 +31,7 @@ float peanut(float x, float y){
   float xx = x-50;
   float yy = y-50;
   sl = (Slider) (list[0]);
-  return circ(xx, yy, 60,20,30)*circ(xx, yy, 100,100,30)-1000*sl.vari()*xx*yy;
+  return circ(xx, yy, 60,20,30)*circ(xx, yy, 100,100,30)-50000000*sl.vari();
 }
 
 void draw(){
