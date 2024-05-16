@@ -1,11 +1,10 @@
-//nu er det her underklasse
 import processing.core.*;
 
 public class Slider extends GUIbase{
   private float linePos = 300; //x-positionen til linjen er 1300.
   private float lineLength = 300; //linjen til sliders er 300
   public float value0; //disse er start og slutværdier for de individuelle sliders.
-  public float value1; //Før var værdierne 0 og 100 men det skal ændres. Kan også være float
+  public float value1;
   
   public Slider(PApplet pin, int xin, int yin, int win, int hin, float value0, float value1) {
       //pin osv. er fra superklasse så de skal FØRST skrives
@@ -18,7 +17,7 @@ public class Slider extends GUIbase{
   public void draw() {
     p.rectMode(p.CENTER);
     p.line (linePos, posy, linePos + lineLength, posy);
-    if (isOver()) {
+    if (isOver()) { //ændrer bare farven på slideren når musen er over
       p.fill(125,81,122);
     } else {
       p.fill(245,174,240);

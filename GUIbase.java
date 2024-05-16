@@ -1,6 +1,6 @@
 import processing.core.*;
 public class GUIbase {
-    protected float width, height; //protected fordi de også bruges i underklasser
+    protected float width, height;
     protected float posx, posy;
     private float xoff;
     private boolean locked;
@@ -15,7 +15,7 @@ public class GUIbase {
     }
   public void draw() {
   }
-  public boolean isOver(){ //skal der så stå boolean i stedet for void?
+  public boolean isOver(){
     return ((p.mouseX<posx+width/2) && (p.mouseX>posx-width/2) && (p.mouseY<posy+height/2) && (p.mouseY>posy-height/2));
   }
 
