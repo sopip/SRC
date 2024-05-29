@@ -4,7 +4,7 @@ Toggle oneToggle;
 PImage heart;
 
 void setup(){
-  heart = loadImage("hjerte_src.png");
+  heart = loadImage("hjerte_src.png"); //formlen altså
   heart.resize(150,0);
   size(700,500);
   for(int i = 0; i<allSliders.length; i++){
@@ -65,7 +65,7 @@ void draw(){
       point(x,200-y);
     }
   }
-  text("En implicit formel har den generelle formel f(x,y)=0. Den kan ikke plotte en \nparabel, men finde hvilke koordinater der er på hver sin side af parablen. Med \ndette kan der tegnes en prik for de koordinater der findes uden for en cirkel \n(der kommer altså her et negativt tal) og de positive tal inden for cirklen. \nHvis to ligninger for cirkler af formen x^2 + y^2 -r^2 multipliceres, og der \nherefter lægges en ny værdi til, vil der nu forme sig en 'peanut'-form. \nDette kaldes for Cassinis Oval. \nPå samme måde kan en hjerteform på den matematiske form \nkunne vises ved denne metode.",20,270);
+  text("En implicit formel har den generelle formel f(x,y)=0. Den kan ikke plotte en \nparabel, men finde hvilke koordinater der er på hver sin side af parablen. Med \ndette kan der tegnes en prik for de koordinater der findes uden for en cirkel \n(der kommer altså her et negativt tal) og de positive tal inden for cirklen. \n \nHvis to ligninger for cirkler af formen x^2 + y^2 -r^2 multipliceres, og der \nherefter lægges en ny værdi til, vil der nu forme sig en 'peanut'-form. \nPå samme måde kan en hjerteform på den matematiske form \nkunne vises ved denne metode.",20,270);
   image(heart,540,410); //kan ikke skrive matematik i tekst så indsætter et billede :,)
 }
 

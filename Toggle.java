@@ -16,7 +16,6 @@ public class Toggle extends GUIbase{
     }
   }
 
-  @Override
   public void pressed() {
     if(isOver()){
     toggled = !toggled;

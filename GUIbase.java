@@ -9,7 +9,7 @@ public class GUIbase {
     public GUIbase(PApplet pin, int xin, int yin, int win, int hin) {
       p = pin;
       posx = xin;
-      posy = yin;
+      posy = yin; 
       width = win;
       height = hin;
     }

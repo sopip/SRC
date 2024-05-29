@@ -13,7 +13,6 @@ public class Slider extends GUIbase{
       this.value1 = value1;
    }
 
-  @Override
   public void draw() {
     p.rectMode(p.CENTER);
     p.line (linePos, posy, linePos + lineLength, posy);
