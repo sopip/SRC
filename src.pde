@@ -1,6 +1,7 @@
 Slider[] allSliders = new Slider[2];
 float[] v = new float [2];
 Toggle oneToggle;
+//allGUIBase array af dem alle 3
 PImage heart;
 
 void setup(){
@@ -48,18 +49,22 @@ void draw(){
   for(GUIbase s : allSliders){
     s.draw();
   }
+  
+  if (oneToggle.toggled) {
+    allSliders[0].value1 = 0.8;
+  } else {
+    allSliders[0].value1 = 0.4;
+  }
   for(int x=0;x<200;x++){
     for(int y=0;y<200;y++){
       if (oneToggle.toggled) {
-        allSliders[0].value1 = 0.8;
         implicitVal = heart(float(x),float(y));
       } else {
-        allSliders[0].value1 = 0.4;
         implicitVal = peanut(float(x),float(y));
       }
       if(implicitVal>0){
         stroke(125,81,122);
-      }else{
+      } else {
         stroke(245,174,240);
       }
       point(x,200-y);
@@ -85,5 +90,3 @@ void mouseReleased() {
     s.released();
   }
  }
-
-  
